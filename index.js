@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const bp = require('body-parser');
 const sequelize = require('./utils/database');
 const todoRouter = require('./routes/index.js');
 const app = express();

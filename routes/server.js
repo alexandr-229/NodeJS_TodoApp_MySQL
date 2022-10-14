@@ -1,18 +1,36 @@
 const Todo = require('../models/todo');
 
 class Server {
-    getTodos() {}
+    async getTodos() {
+        return await Todo.findAll();
+    }
 
-    createTodo() {
+    async createTodo(title) {
         try {
+            return await Todo.create({
+                title,
+                done: false,
+            });
         } catch (e) {
             throw new Error(e);
         }
     }
 
-    editTodo() {}
+    async editTodo(id, isDone) {
+        const todo = await Todo.findByPk(id);
+        todo.done = isDone;
+        await todo.save();
+        return todo;
+    }
 
-    deleteTodo() {}
+    async deleteTodo(id) {
+        const todos = await Todo.findAll({
+            where: {
+                id,
+            },
+        });
+        await todos[0].destroy();
+    }
 }
 
 module.exports = new Server();
