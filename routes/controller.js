@@ -1,11 +1,37 @@
+const server = require('./server');
+
 class Controller {
-    getTodos(req, res) {}
+    async getTodos(req, res) {
+        try {
+        } catch (e) {
+            console.log(e);
+            res.status(400).json(e);
+        }
+    }
 
-    createTodo(req, res) {}
+    async createTodo(req, res) {
+        try {
+        } catch (e) {
+            console.log(e);
+            res.status(400).json(e);
+        }
+    }
 
-    editTodo(req, res) {}
+    editTodo(req, res) {
+        try {
+        } catch (e) {
+            console.log(e);
+            res.status(400).json(e);
+        }
+    }
 
-    deleteTodo(req, res) {}
+    deleteTodo(req, res) {
+        try {
+        } catch (e) {
+            console.log(e);
+            res.status(400).json(e);
+        }
+    }
 }
 
 module.exports = new Controller();
